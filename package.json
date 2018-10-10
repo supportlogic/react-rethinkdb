@@ -17,7 +17,7 @@
     "dist"
   ],
   "dependencies": {
-    "rethinkdb-websocket-client": "^0.4.7"
+    "rethinkdb-websocket-client": "https://github.com/ikhalikov/rethinkdb-websocket-client/tarball/dist-experimental"
   },
   "devDependencies": {
     "babel": "^5.5.6",
