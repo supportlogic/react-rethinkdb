@@ -17,7 +17,7 @@
     "dist"
   ],
   "dependencies": {
-    "rethinkdb-websocket-client": "https://github.com/supportlogic/rethinkdb-websocket-client/tarball/master"
+    "rethinkdb-websocket-client": "https://github.com/supportlogic/rethinkdb-websocket-client/tarball/opt/ch13048/optimize-rdb-packets-processing"
   },
   "devDependencies": {
     "babel": "^5.5.6",
