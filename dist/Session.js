@@ -64,10 +64,11 @@ var MetaSession = function MetaSession(RethinkdbWebsocketClient) {
         var db = _ref.db;
         var simulatedLatencyMs = _ref.simulatedLatencyMs;
         var autoReconnectDelayMs = _ref.autoReconnectDelayMs;
+        var waitForPacket = _ref.waitForPacket;
 
         (0, _util.ensure)(!this._connPromise, 'Session.connect() called when connected');
         var connectAfterDelay = function connectAfterDelay(delayMs) {
-          var options = { host: host, port: port, path: path, wsProtocols: wsProtocols, wsBinaryType: wsBinaryType, secure: secure, db: db, simulatedLatencyMs: simulatedLatencyMs };
+          var options = { host: host, port: port, path: path, wsProtocols: wsProtocols, wsBinaryType: wsBinaryType, secure: secure, db: db, simulatedLatencyMs: simulatedLatencyMs, waitForPacket: waitForPacket };
           _this._connPromise = new Promise(function (resolve, reject) {
             setTimeout(function () {
               _connect(options).then(resolve, reject);
