@@ -56,14 +56,18 @@ export const MetaSession = RethinkdbWebsocketClient => {
         if (autoReconnectDelayMs !== undefined) {
           this._connPromise.then(conn => conn.on('close', onClose), onClose);
         }
-        this._connPromise.then(() => this._subscriptionManager.handleConnect());
+        this._connPromise
+          .then(() => this._subscriptionManager.handleConnect())
+          .catch(error => console.error('Failed to establish connection', error));
       };
       connectAfterDelay(0);
     }
 
     close() {
       ensure(this._connPromise, 'Session.close() called when not connected');
-      this._connPromise.then(conn => conn.close());
+      this._connPromise
+        .then(conn => conn.close())
+        .catch(error => console.error('Failed to establish connection', error));
       this._connPromise = null;
     }
 
