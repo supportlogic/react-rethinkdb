@@ -89,6 +89,8 @@ var MetaSession = function MetaSession(RethinkdbWebsocketClient) {
           }
           _this._connPromise.then(function () {
             return _this._subscriptionManager.handleConnect();
+          })['catch'](function (error) {
+            return console.error('Failed to establish connection', error);
           });
         };
         connectAfterDelay(0);
@@ -99,6 +101,8 @@ var MetaSession = function MetaSession(RethinkdbWebsocketClient) {
         (0, _util.ensure)(this._connPromise, 'Session.close() called when not connected');
         this._connPromise.then(function (conn) {
           return conn.close();
+        })['catch'](function (error) {
+          return console.error('Failed to establish connection', error);
         });
         this._connPromise = null;
       }
