@@ -17,7 +17,7 @@
     "dist"
   ],
   "dependencies": {
-    "rethinkdb-websocket-client": "https://github.com/supportlogic/rethinkdb-websocket-client/tarball/master"
+    "rethinkdb-websocket-client": "https://github.com/supportlogic/rethinkdb-websocket-client/tarball/feature/aBNDd6q7/ws-as-peerDependency"
   },
   "devDependencies": {
     "babel": "^5.5.6",
